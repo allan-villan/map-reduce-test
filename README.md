@@ -1,7 +1,7 @@
 # MapReduce
 From a history report of various vehicles, the MapReduce program will produce a report of accidents per make and year of the car.
 
-The report is stored as CSV files in HDFS with the following schema: 
+The history reports are stored as CSV files in HDFS with the following schema: 
 | Column     | Type        |
 |------------|:------------|
 | incident_id | INT |
