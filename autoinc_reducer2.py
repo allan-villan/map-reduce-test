@@ -15,22 +15,22 @@ import sys
 """
 
 current_key = None
-current_values = []
+current_value = []
 
 def reset():
     global current_key
-    global current_values
+    global current_value
 
     current_key = None
     current_values = []
 
 def flush():
     global current_key
-    global current_values
+    global current_value
 
     total = 0
 
-    for value in current_values:
+    for value in current_value:
         count = value
         total += count
 
@@ -40,7 +40,7 @@ for line in sys.stdin:
     line = line.split('\t')
     
     key = line[0] # make and year
-    values = int(line[1]) # count per combo of make and year
+    value = int(line[1]) # count per combo of make and year
 
     if current_key != key: # catches key changes
         if current_key != None:
@@ -48,6 +48,6 @@ for line in sys.stdin:
         reset()
 
     current_key = key
-    current_values.append(values)
+    current_value.append(value)
 
 flush() # flush last group if needed

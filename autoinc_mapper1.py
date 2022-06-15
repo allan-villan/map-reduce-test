@@ -22,6 +22,6 @@ for line in sys.stdin:
     year = line[5]
 
     key = vin_num
-    values = (type, make, year)
+    value = (type, make, year)
 
-    print '%s\t%s' % (key,values)
+    print '%s\t%s' % (key, value)

@@ -34,9 +34,9 @@ def flush():
         if type == 'A':
             make = initial_sale_dict[current_key][1]
             year = initial_sale_dict[current_key][2]
-            values = (type, make, year)
+            value = (type, make, year)
 
-            print '%s\t%s' % (current_key,values)
+            print '%s\t%s' % (current_key, value)
         else:
             continue
 

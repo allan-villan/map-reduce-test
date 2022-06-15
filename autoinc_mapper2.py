@@ -11,10 +11,10 @@ import sys
 for line in sys.stdin:
     line = line.split('\t')
 
-    values = eval(line[1]) # reads in the tuple provided
+    value = eval(line[1]) # reads in the tuple provided
 
-    make = values[1]
-    year = values[2]
+    make = value[1]
+    year = value[2]
 
     mapper2_key = '%s %s' % (make, year)
     
