@@ -1,6 +1,4 @@
 # MapReduce
-In this project, I will utilize data from an automobile tracking platform that tracks the history of important incidents after the sale of a new vehicle. Such incidents include subsequent private sales, repairs, and accident reports. The platform provides a good reference for second-hand buyers to understand the vehicles they are interested in. 
-
 From a history report of various vehicles, the MapReduce program will produce a report of accidents per make and year of the car.
 
 The report is stored as CSV files in HDFS with the following schema: 
@@ -20,8 +18,8 @@ The report is stored as CSV files in HDFS with the following schema:
 A mapper that reads the input data (data.csv) and propagates the make and year to the accident records (Incident Type A).
 
 ### Key / Value Pair
-- Key = vin_number
-- Value = (incident type, make, year)
+- Key: vin_number
+- Value: (incident type, make, year)
 
 **Input:**
 
@@ -55,8 +53,8 @@ INU45KIOOPA343980       ('A', '', '')
 
 
 ### Key / Value Pair
-- Key = vin_number
-- Value = (incident type, make, year)
+- Key: vin_number
+- Value: (incident type, make, year)
 
 **Input:**
 
@@ -74,8 +72,8 @@ VXIO456XLBB630221       ('A', 'Nissan', '2003')
 - A mapper that reads the previous reducer output (autoinc_reducer1.py)
 
 ### Key / Value Pair
-- Key = Concatenation of vehicle make and year
-- Value = Count of vehicle make and year
+- Key: Concatenation of vehicle make and year
+- Value: Count of vehicle make and year
 
 **Input:**
 
@@ -94,8 +92,8 @@ Nissan 2003      1
 - Within a group of cars and their make and years, sum the values provided from autoinc_mapper2.py
 
 ### Key / Value Pair
-- Key = Concatenation of vehicle make and year
-- Value = Count of vehicle make and year
+- Key: Concatenation of vehicle make and year
+- Value: Count of vehicle make and year
 
 **Input:**
 
